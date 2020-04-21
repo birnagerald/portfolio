@@ -1,0 +1,262 @@
+body {
+      font-family: 'Nunito', sans-serif;
+      background: rgba(0, 0, 0, 0.79);
+      margin: 0;
+}
+
+.content {
+      grid-area: content;
+
+}
+
+.sidebar {
+      grid-area: sidebar;
+      background: linear-gradient(to right,
+            rgba(33, 106, 255, 1),
+            rgba(92, 80, 255, 1),
+            rgba(193, 37, 255, 1));
+      justify-content: center;
+}
+
+.footer {
+      grid-area: footer;
+}
+
+.container {
+      font-size: 1.5em;
+      width: 100%;
+      display: grid;
+      grid-template-areas:
+            "sidebar"
+            "content"
+            "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: 130px 2600px 250px;
+}
+
+.content,
+.sidebar,
+.footer {
+      padding: 1em;
+}
+
+nav ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+}
+
+nav li {
+      list-style: none;
+      padding: 1em 0;
+}
+
+nav li a {
+      color: white;
+      font-weight: 700;
+      opacity: 0.6;
+      text-decoration: none;
+      transition: 0.3s;
+      font-size: 0.7em;
+}
+
+
+nav li a:hover {
+      opacity: 1;
+}
+
+.hero,
+.skills,
+.footer {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+}
+
+.hero img {
+      width: 200px;
+}
+
+.hero h1,
+.skills h1,
+.footer h1 {
+      font-size: 1.5em;
+      font-weight: 300;
+      color: #ffffff;
+}
+
+.hero p,
+.skills p {
+      font-weight: 300;
+      line-height: 1.3em;
+      color: #98a0ad;
+}
+
+.skills h2 {
+      font-weight: 400;
+      color: white;
+}
+
+footer ul {
+      max-width: 640px;
+      margin: 2em auto;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+}
+
+footer ul li {
+      list-style: none;
+      align-self: flex-end;
+}
+
+footer ul li a {
+      text-decoration: none;
+      color: #c1c6ce;
+}
+
+svg {
+      width: 100%;
+}
+
+footer p {
+      font-size: 0.8em;
+}
+
+.front-item,
+.back-item,
+.work {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5 {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100px;
+      height: 100px;
+      margin: auto auto 15px auto;
+      border: 5px solid transparent;
+      border-radius: 80px;
+      background-image: linear-gradient(rgb(54, 54, 54), rgb(54, 54, 54)),
+            linear-gradient(rgba(33, 106, 255, 1),
+            rgba(92, 80, 255, 1),
+            rgba(193, 37, 255, 1));
+      background-origin: border-box;
+      background-clip: content-box,
+            border-box;
+}
+
+.front-item span,
+.back-item span {
+      color: white;
+      font-size: 0.8em;
+}
+
+.project img {
+      max-width: 300px;
+      border: 2px solid;
+      border-image:
+            linear-gradient(rgba(33, 106, 255, 1), rgba(92, 80, 255, 1), rgba(193, 37, 255, 1)) 30;
+}
+
+/* animations */
+
+.hero {
+      animation-name: fadeIn;
+      animation-duration: 2.2s;
+}
+
+.nav1 {
+      animation-name: fadeIn2;
+      animation-duration: 1.0s;
+}
+
+.nav2 {
+      animation-name: fadeIn2;
+      animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+      0% {
+            opacity: 0;
+      }
+
+      100% {
+            opacity: 1;
+      }
+}
+
+@keyframes fadeIn2 {
+      0% {
+            opacity: 0;
+      }
+
+      100% {
+            opacity: 0.6;
+      }
+}
+
+@media (min-width: 1040px) {
+      .container {
+            grid-template-areas: "sidebar content"
+                  "sidebar footer";
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 1fr auto;
+      }
+
+      nav ul {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+      }
+
+      nav li a {
+            font-size: 1em;
+      }
+
+      .sidebar {
+            background: linear-gradient(rgba(33, 106, 255, 1),
+                  rgba(92, 80, 255, 1),
+                  rgba(193, 37, 255, 1));
+      }
+
+      .hero {
+            text-align: left;
+            margin: 2em auto;
+      }
+
+      .hero img {
+            width: 250px;
+            float: right;
+      }
+
+      .hero h1 {
+            font-size: 2em;
+      }
+
+      .hero p {
+            width: 60%;
+
+      }
+
+      footer ul {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2em 0;
+      }
+
+      svg {
+            width: 50%;
+      }
+}
